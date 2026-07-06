@@ -129,7 +129,7 @@ a {
 }
 
 .hero-bg {
-  background-image: url("assets/hero-playblast-ai-render.png");
+  background-image: url("assets/hero-playblast-ai-render.png?v=20260706-real-assets");
   background-size: cover;
   background-position: center;
   filter: saturate(0.92) contrast(1.04);
