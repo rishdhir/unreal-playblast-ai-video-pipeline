@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unreal Engine Playblast to AI Video Render Workflow</title>
+    <meta
+      name="description"
+      content="A one-page BBC pipeline for camera-locked AI video generation using Unreal Engine playblasts, image references, and AI video tools."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar" data-section="top">
+      <a class="brand" href="#top" aria-label="Unreal Engine to AI render workflow">
+        <span class="bbc-lockup" aria-hidden="true">
+          <span class="brand-mark">
+            <span>B</span>
+            <span>B</span>
+            <span>C</span>
+          </span>
+          <span class="studios">STUDIOS</span>
+        </span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-text">Pipeline R&amp;D</span>
+      </a>
+
+      <nav class="nav" aria-label="Page sections">
+        <a href="#overview">Overview</a>
+        <a href="#visual-flow">Visual Flow</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#template">Template</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" role="img" aria-label="Unreal Engine playblast transforming into an AI video render"></div>
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> BBC PIPELINE R&amp;D</p>
+          <h1 id="hero-title">Unreal Engine playblast to AI video render.</h1>
+          <p class="hero-copy">
+            Camera-locked AI generation using Unreal Engine, image references, and
+            Seedance-style video rendering.
+          </p>
+          <p class="hero-note">
+            Unreal Engine controls the shot. AI renders the look.
+          </p>
+        </div>
+      </section>
+
+      <section id="overview" class="section intro searchable">
+        <div class="section-heading">
+          <p class="kicker">CORE PRINCIPLE</p>
+          <h2>Previs provides the structure. AI provides the finish.</h2>
+        </div>
+        <p class="lead">
+          Unreal Engine defines camera movement, scale, blocking, timing, and
+          composition. AI handles the final surface, lighting, texture,
+          atmosphere, and cinematic finish.
+        </p>
+      </section>
+
+      <section id="visual-flow" class="visual-flow searchable" aria-label="Visual workflow examples">
+        <div class="visual-flow-inner">
+          <div class="flow-stack" data-sync-group="pipeline">
+            <article class="flow-shot">
+              <div class="flow-shot-copy">
+                <p class="shot-number">01</p>
+                <h3>Giraffe in dystopian alley</h3>
+                <p>Proxy giraffe motion and alley blocking become the final photoreal shot.</p>
+              </div>
+              <div class="flow-chain">
+                <figure class="media-node">
+                  <video src="assets/giraffe-shot-02-input.mp4?v=20260705-giraffe-shot-02" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="giraffe-shot-02"></video>
+                  <figcaption><span>INPUT</span> Unreal Engine playblast</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node reference-node">
+                  <img src="assets/giraffe-shot-02-reference.png?v=20260705-gir-key-image" alt="Giraffe alley alternate key image reference" />
+                  <figcaption><span>REFERENCE</span> Key image</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node">
+                  <video src="assets/giraffe-shot-02-output.mp4?v=20260705-giraffe-shot-02" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="giraffe-shot-02"></video>
+                  <figcaption><span>OUTPUT</span> AI render</figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <article class="flow-shot flow-shot-continuation">
+              <div class="flow-chain branch-chain">
+                <figure class="media-node">
+                  <video src="assets/giraffe-playblast.mp4?v=20260705-gir-test-1" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="giraffe-primary"></video>
+                  <figcaption><span>INPUT</span> Unreal Engine playblast</figcaption>
+                </figure>
+                <div class="branch-spacer" aria-hidden="true">
+                  <svg viewBox="0 0 72 620" preserveAspectRatio="none" focusable="false">
+                    <defs>
+                      <marker id="input-branch-arrowhead" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+                        <path d="M 0 0 L 9 3.5 L 0 7 Z"></path>
+                      </marker>
+                    </defs>
+                    <path class="input-branch-path" d="M 0 304 H 28 V 132 H 68"></path>
+                    <path class="input-branch-path" d="M 0 316 H 28 V 535 H 68"></path>
+                  </svg>
+                </div>
+                <div class="branch-options">
+                  <div class="branch-row">
+                    <figure class="media-node reference-node">
+                      <img src="assets/giraffe-reference.png?v=20260705-giraffe-restore" alt="Giraffe alley final frame reference" />
+                      <figcaption><span>REFERENCE</span> Key image</figcaption>
+                    </figure>
+                    <div class="node-arrow" aria-hidden="true"></div>
+                    <figure class="media-node">
+                      <video src="assets/giraffe-final.mp4?v=20260705-giraffe-top-4k" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="giraffe-primary"></video>
+                      <figcaption><span>OUTPUT</span> AI render</figcaption>
+                    </figure>
+                  </div>
+                  <div class="branch-row">
+                    <figure class="media-node reference-node">
+                      <img src="assets/giraffe-reference-02.png?v=20260705-giraffe-add" alt="Second giraffe alley key image reference" />
+                      <figcaption><span>REFERENCE</span> Key image</figcaption>
+                    </figure>
+                    <div class="node-arrow" aria-hidden="true"></div>
+                    <figure class="media-node">
+                      <video src="assets/giraffe-final-02.mp4?v=20260705-giraffe-add" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="giraffe-secondary"></video>
+                      <figcaption><span>OUTPUT</span> AI render</figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="flow-shot">
+              <div class="flow-shot-copy">
+                <p class="shot-number">02</p>
+                <h3>Formula 1 broadcast shot</h3>
+                <p>A simple car proxy keeps path and scale while the render takes on broadcast realism.</p>
+              </div>
+              <div class="flow-chain">
+                <figure class="media-node">
+                  <video src="assets/f1-playblast.mp4" autoplay muted loop playsinline preload="metadata" data-sync-video></video>
+                  <figcaption><span>INPUT</span> Unreal Engine playblast</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node reference-node">
+                  <img src="assets/f1-reference.png" alt="Formula 1 broadcast final frame reference" />
+                  <figcaption><span>REFERENCE</span> Key image</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node">
+                  <video src="assets/f1-final.mp4?v=20260705-f1-4k" autoplay muted loop playsinline preload="metadata" data-sync-video></video>
+                  <figcaption><span>OUTPUT</span> AI render</figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <article class="flow-shot">
+              <div class="flow-shot-copy">
+                <p class="shot-number">03</p>
+                <h3>TRAPPIST-1e space shot</h3>
+                <p>Orbital scale and camera layout stay fixed while surface, plasma, and atmosphere are rendered.</p>
+              </div>
+              <div class="flow-chain">
+                <figure class="media-node">
+                  <video src="assets/trappist-playblast.mp4?v=20260706-nasash02" autoplay muted loop playsinline preload="metadata" data-sync-video></video>
+                  <figcaption><span>INPUT</span> Unreal Engine playblast</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node reference-node">
+                  <img src="assets/trappist-reference.png?v=20260706-nanobanana-06" alt="TRAPPIST-1e final frame reference" />
+                  <figcaption><span>REFERENCE</span> Key image</figcaption>
+                </figure>
+                <div class="node-arrow" aria-hidden="true"></div>
+                <figure class="media-node">
+                  <video src="assets/trappist-final.mp4?v=20260706-shot02" autoplay muted loop playsinline preload="metadata" data-sync-video></video>
+                  <figcaption><span>OUTPUT</span> AI render</figcaption>
+                </figure>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section searchable" id="pipeline">
+        <div class="section-heading">
+          <p class="kicker">WHY IT MATTERS</p>
+          <h2>3D direction stays locked. AI handles the render look.</h2>
+          <p>
+            For R&amp;D, the useful split is simple: Unreal Engine gives
+            repeatable control, while the AI pass gives a fast read on realism,
+            mood, and finish.
+          </p>
+        </div>
+
+        <div class="research-panel" aria-label="R&D findings">
+          <div class="research-rail" aria-label="Pipeline value chain">
+            <span>UNREAL ENGINE CONTROL</span>
+            <i aria-hidden="true"></i>
+            <span>AI RENDER PASS</span>
+            <i aria-hidden="true"></i>
+            <span>FAST REVIEW</span>
+          </div>
+
+          <div class="research-grid">
+            <article>
+              <span>01</span>
+              <h3>Control remains in 3D.</h3>
+              <p>Camera, scale, blocking, and timing are defined before AI generation.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Realism can be tested earlier.</h3>
+              <p>Lighting, texture, atmosphere, and finish become visible during exploration.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Render time stops being the gate.</h3>
+              <p>The team can judge a shot direction without waiting for a full CG render path.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>AI becomes less random.</h3>
+              <p>The model is guided by the playblast, target frame, and reference sheets.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="section alt searchable">
+        <div class="section-heading">
+          <p class="kicker">STEP BY STEP</p>
+          <h2>From Unreal Engine playblast to AI video render.</h2>
+        </div>
+
+        <div class="workflow-timeline">
+          <article class="timeline-step">
+            <div class="timeline-marker">01</div>
+            <div class="timeline-copy">
+              <h3>Build Unreal Engine playblast</h3>
+              <p>Camera, blocking, scale, timing, and composition are solved in previs first.</p>
+            </div>
+            <figure class="timeline-media">
+              <video src="assets/giraffe-shot-02-input.mp4?v=20260705-giraffe-shot-02" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="timeline-playblast"></video>
+              <figcaption><span>UNREAL ENGINE</span> Unreal Engine view</figcaption>
+            </figure>
+          </article>
+
+          <article class="timeline-step">
+            <div class="timeline-marker">02</div>
+            <div class="timeline-copy">
+              <h3>Generate target frame</h3>
+              <p>A selected playblast frame and prompt establish the final look before animation.</p>
+            </div>
+            <div class="timeline-node-chain">
+              <figure class="timeline-node">
+                <img src="assets/giraffe-playblast-first-frame.png?v=20260705-first-frame" alt="First frame from the Unreal Engine playblast" />
+                <figcaption><span>INPUT</span> Playblast frame</figcaption>
+              </figure>
+              <div class="timeline-arrow" aria-hidden="true"></div>
+              <div class="prompt-node">
+                <span>PROMPT</span>
+                <p>Render as a photoreal giraffe in an overgrown urban alley. Preserve camera, scale, and composition.</p>
+              </div>
+              <div class="timeline-arrow" aria-hidden="true"></div>
+              <figure class="timeline-node">
+                <img src="assets/giraffe-shot-02-reference.png?v=20260705-gir-key-image" alt="Generated giraffe target frame" />
+                <figcaption><span>OUTPUT</span> Target frame</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-step">
+            <div class="timeline-marker">03</div>
+            <div class="timeline-copy">
+              <h3>Create reference sheets</h3>
+              <p>Subject, location, and style reference sheets keep the generation controlled.</p>
+            </div>
+            <div class="reference-strip">
+              <figure>
+                <img src="assets/giraffe-character-sheet.png?v=20260705-sheet-refs" alt="Giraffe character sheet" />
+                <figcaption>Character sheet</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/giraffe-location-sheet.png?v=20260705-sheet-refs" alt="Giraffe alley location reference" />
+                <figcaption>Location reference</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/giraffe-style-reference.png?v=20260705-sheet-refs" alt="Giraffe style reference" />
+                <figcaption>Style reference</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-step">
+            <div class="timeline-marker">04</div>
+            <div class="timeline-copy">
+              <h3>Feed into the model</h3>
+              <p>Playblast video plus reference sheets are fed into the video model.</p>
+            </div>
+            <div class="timeline-node-chain video-model-chain">
+              <div class="prompt-node video-prompt">
+                <div class="prompt-attachments" aria-label="Attached playblast and reference sheets">
+                  <img src="assets/giraffe-playblast-attachment.png?v=20260705-playblast-attachment" alt="Attached playblast video reference" />
+                  <img src="assets/giraffe-character-sheet.png?v=20260705-sheet-refs" alt="Attached character reference" />
+                  <img src="assets/giraffe-location-sheet.png?v=20260705-sheet-refs" alt="Attached location reference" />
+                  <img src="assets/giraffe-style-reference.png?v=20260705-sheet-refs" alt="Attached style reference" />
+                </div>
+                <span>VIDEO PROMPT</span>
+                <p>Use the playblast video and attached reference sheets to generate the final AI video render.</p>
+              </div>
+              <div class="timeline-arrow" aria-hidden="true"></div>
+              <figure class="timeline-node timeline-output">
+                <video src="assets/giraffe-shot-02-output.mp4?v=20260705-giraffe-shot-02" autoplay muted loop playsinline preload="metadata" data-sync-video data-sync-set="timeline-video-output"></video>
+                <figcaption><span>OUTPUT</span> AI video render</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="template" class="section template-section searchable">
+        <div class="section-heading">
+          <p class="kicker">CORE TEMPLATE</p>
+          <h2>The repeatable prompt block.</h2>
+        </div>
+
+        <pre class="template"><code>Use the uploaded references strictly.
+
+Reference hierarchy:
+1. Playblast video = exact camera movement, camera path, speed, timing, framing, perspective, object scale, object position, blocking, and motion.
+2. Final frame = exact composition, lighting, colour, scale, spacing, framing, and visual target.
+3. Character/object sheet = exact subject design, proportions, materials, texture, and detail.
+4. Location sheet = exact environment style, layout, materials, lighting, and atmosphere.
+
+The playblast is the exact motion reference. Follow it precisely. Do not change the camera move. Do not change timing. Do not cut. Single continuous shot.
+
+Replace the placeholder object from the playblast with the final subject, while preserving the same path, scale, position, timing, and blocking.
+
+Use the final frame as the exact composition reference. Preserve the same camera framing, screen position, object size, spacing, overlap, and layout.
+
+Use the character/object sheet only for the subject's design and material details.
+
+Use the location sheet only for the environment design, materials, and atmosphere.
+
+Create a photoreal cinematic video shot with realistic lighting, grounded motion, accurate scale, believable materials, and high-end VFX quality.
+
+Add only subtle realistic secondary motion where appropriate. Keep all movement locked to the playblast.
+
+Negative:
+Do not change the camera move.
+Do not change the timing.
+Do not change the object path.
+Do not change the scale.
+Do not change the composition.
+Do not add new objects.
+Do not remove important objects.
+Do not create a new shot.
+Do not cut.
+Do not make it look like concept art, game render, cartoon, or AI-generated.</code></pre>
+      </section>
+
+      <section class="section closing searchable">
+        <div>
+          <p class="kicker">CLOSING NOTE</p>
+          <h2>Not limited to Unreal Engine.</h2>
+        </div>
+        <div class="closing-copy">
+          <p>
+            This workflow can be done with Blender, Cinema 4D, Houdini, or any other
+            3D software.
+          </p>
+          <div class="closing-meta" aria-label="Models and platforms used">
+            <div>
+              <span>Models used</span>
+              <strong>Nano Banana Pro, Seed Dance 2.0</strong>
+            </div>
+            <div>
+              <span>Platforms used</span>
+              <strong>Runway, Magnific</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Unreal Engine Playblast to AI Video Render Workflow</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
