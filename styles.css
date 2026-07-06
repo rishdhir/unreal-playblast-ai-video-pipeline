@@ -342,6 +342,10 @@ h1 {
   gap: 0;
 }
 
+.flow-chain + .flow-chain {
+  margin-top: 44px;
+}
+
 .branch-chain {
   grid-template-columns: minmax(280px, 0.9fr) 72px minmax(0, 1.8fr);
   align-items: stretch;
