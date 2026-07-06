@@ -624,6 +624,10 @@ h1 {
   justify-self: start;
 }
 
+.timeline-step > .timeline-media-large {
+  width: min(100%, 560px);
+}
+
 .timeline-media video,
 .timeline-node video,
 .timeline-node img,
