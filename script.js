@@ -14,6 +14,7 @@ const fallbackVideoGroups = Array.from(document.querySelectorAll(".flow-shot"))
   .filter((videos) => videos.length > 0);
 const videoGroups = [...explicitVideoGroups, ...fallbackVideoGroups]
   .map((shot) => ({
+    active: false,
     ready: false,
     sharedDuration: 0,
     startedAt: 0,
@@ -40,11 +41,22 @@ function startSyncedVideos() {
 
   let rafId = 0;
   const videoToGroup = new Map();
+  const activeVideos = new Set();
+
+  const refreshActiveGroups = () => {
+    videoGroups.forEach((group) => {
+      group.active = group.videos.some((video) => activeVideos.has(video));
+      if (!group.active) {
+        group.videos.forEach((video) => video.pause());
+      }
+    });
+  };
 
   const primeVideo = (video) => {
     video.muted = true;
     video.playsInline = true;
     video.loop = false;
+    video.preload = "metadata";
     const playPromise = video.play();
     if (playPromise && typeof playPromise.catch === "function") {
       playPromise.catch(() => {});
@@ -60,7 +72,13 @@ function startSyncedVideos() {
 
   const prepareGroups = () => {
     videoGroups.forEach((group) => {
+      if (!group.active) return;
       if (group.ready) return;
+
+      group.videos.forEach((video) => {
+        video.preload = "metadata";
+        primeVideo(video);
+      });
 
       const isReady = group.videos.every(
         (video) => Number.isFinite(video.duration) && video.duration > 0
@@ -86,6 +104,7 @@ function startSyncedVideos() {
     prepareGroups();
 
     videoGroups.forEach((group) => {
+      if (!group.active) return;
       if (!group.ready || !group.sharedDuration) return;
 
       const rowTime = ((performance.now() - group.startedAt) / 1000) % group.sharedDuration;
@@ -115,7 +134,25 @@ function startSyncedVideos() {
     rafId = window.setTimeout(sync, 300);
   };
 
+  const videoVisibilityObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeVideos.add(entry.target);
+        } else {
+          activeVideos.delete(entry.target);
+        }
+      });
+      refreshActiveGroups();
+      prepareGroups();
+    },
+    { rootMargin: "700px 0px", threshold: 0 }
+  );
+
   syncedVideos.forEach((video) => {
+    video.preload = "none";
+    videoVisibilityObserver.observe(video);
+
     video.addEventListener("ended", () => {
       const group = videoToGroup.get(video);
       if (!group) return;
@@ -133,7 +170,6 @@ function startSyncedVideos() {
       },
       { once: true }
     );
-    primeVideo(video);
   });
 
   sync();
